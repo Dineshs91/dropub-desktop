@@ -25,7 +25,7 @@ function fileElement (f) {
   let el = bel`
   <div class="dropub-file">
     <div class="dropub-file-emoji">
-      ${bel([emojione.unicodeToImage(fileEmoji(type))])}
+      ${bel([(fileEmoji(type))])}
     </div>
     <div class="dropub-filename">
       <div class="dropub-filename-label
