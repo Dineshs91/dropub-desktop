@@ -239,7 +239,7 @@ function init (elem, opts) {
 const view = funky`
 ${init}
 <dropub-torrent>
-  <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
   <style>
     dropub-torrent {
       font-family: 'Lato', sans-serif;
