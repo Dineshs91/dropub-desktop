@@ -169,7 +169,7 @@ function init (elem, opts) {
     let btn = bel`<div class="dropub-zip-download">Download Zip</div>`
     elem.querySelector('div.dropub-buttons').appendChild(btn)
 
-    let worker = new window.Worker('/worker.js')
+    let worker = new window.Worker('./worker.js')
 
     btn.onclick = () => {
       let addLoader = container => {
