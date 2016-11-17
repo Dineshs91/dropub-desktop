@@ -33,9 +33,19 @@ Dropub allows anyone on the internet to share files over the web with ease.
 npm install
 ```
 
+**Install electron**
+
+```
+npm install -g electron
+```
+
 ## Usage
 
-TODO
+**Electron app**
+
+```
+electron .
+```
 
 ## API
 

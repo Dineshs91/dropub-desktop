@@ -25,7 +25,7 @@ function fileElement (f) {
   let el = bel`
   <div class="dropub-file">
     <div class="dropub-file-emoji">
-      ${bel([emojione.unicodeToImage(fileEmoji(type))])}
+      ${bel([(fileEmoji(type))])}
     </div>
     <div class="dropub-filename">
       <div class="dropub-filename-label
@@ -169,7 +169,7 @@ function init (elem, opts) {
     let btn = bel`<div class="dropub-zip-download">Download Zip</div>`
     elem.querySelector('div.dropub-buttons').appendChild(btn)
 
-    let worker = new window.Worker('/worker.js')
+    let worker = new window.Worker('./worker.js')
 
     btn.onclick = () => {
       let addLoader = container => {
@@ -226,7 +226,10 @@ function init (elem, opts) {
   setTimeout(() => {
     // Setup Share Button
     let btn = elem.querySelector('div.dropub-share')
-    btn.setAttribute('data-clipboard-text', window.location.toString())
+
+    let url = "https://dropub.com/" + window.location.search
+
+    btn.setAttribute('data-clipboard-text', url)
     let clip = new Clipboard(btn)
     clip.on('success', () => {
       noticeContainer.addNotice('Copied url to clipboard!')
@@ -242,7 +245,7 @@ function init (elem, opts) {
 const view = funky`
 ${init}
 <dropub-torrent>
-  <link href='//fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css' />
   <style>
     dropub-torrent {
       font-family: 'Lato', sans-serif;
