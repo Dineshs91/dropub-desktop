@@ -226,7 +226,10 @@ function init (elem, opts) {
   // Setup Share Button
   setTimeout(() => {
     let btn = elem.querySelector('div.dropub-share')
-    btn.setAttribute('data-clipboard-text', window.location.toString())
+
+    let url = "https://dropub.com/" + window.location.search
+
+    btn.setAttribute('data-clipboard-text', url)
     let clip = new Clipboard(btn)
     clip.on('success', () => {
       noticeContainer.addNotice('Copied url to clipboard!')
